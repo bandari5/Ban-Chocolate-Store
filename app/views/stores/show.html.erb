@@ -1,0 +1,47 @@
+
+<style>
+body{
+  background-image: linear-gradient(rgba(255,255,255,0.75),rgba(255,255,255,0.75)), url('http://scart-design.com/wp-content/uploads/2018/02/Jupara-3.jpg');
+  background-repeat: no-repeat;
+  background-size:cover;
+
+}
+
+</style>
+  <body>
+  <% if current_user.email == "ban@gmail.com"%>
+  <h1><%= @store.name %> products</h1>
+  <%= link_to "New product", new_product_path(:store_id => @store.id), { :class => "button waves-effect waves-light btn" } %>
+  <br><br>
+ <% @products.each do |product| %>
+    <tr>
+        <td><%= product.name %></td>
+          <td><%= image_tag(product.img, size: "100x100", alt: "Product Image") %></td>
+        
+        <td><a class="btn-floating btn-large red" href="<%= edit_product_path(product) %>" >
+      			<i class="large material-icons">mode_edit</i>
+    		</a>
+    	</td>
+        <td> 
+           <%= button_to "Delete", product_path(product.id), method: :delete,
+              data: { confirm: "Are you sure?" } %>
+    
+        </td>
+        <%end %>
+    </tr>
+    <%else%>
+  <div class="row">
+    <% @products.each do |product| %>
+
+        <div class="card-panel grey lighten-2 col s4" style="margin: 10px">
+          <%= image_tag(product.img, size: "100x100", alt: "product Image") %>
+          <br>
+          <strong> The product Name:<%= product.name %></strong>
+          <em>Price:<%= product.price %></em>
+        </div>
+    <% end %>
+  </div>
+
+    
+  <% end %>
+  </body>
