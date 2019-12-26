@@ -1,30 +1,12 @@
-<<<<<<< HEAD
-# README
+# Project:
+I have developed a website with Ruby on rails, the website idea is choclate store where the user can view the products, amd only admin user who can add, edit or delete the products.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Built With
+* [Visual Studio Code] - Editor
+* [MySQL Workbench] - Database Software
+* [SQL] -Database Language
+* [Ruby] - Programming Language
+* [HTML and CSS] - Forntend
 
-Things you may want to cover:
 
-* Ruby version
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-# store_app 2
-# Store_app
-=======
-# Ban-Chocolate-Store
->>>>>>> 4862443caf059352621b9d6998cdc2a8aeb576e5
