@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # README
 
 This README would normally document whatever steps are necessary to get the
@@ -24,3 +25,6 @@ Things you may want to cover:
 * ...
 # store_app 2
 # Store_app
+=======
+# Ban-Chocolate-Store
+>>>>>>> 4862443caf059352621b9d6998cdc2a8aeb576e5
