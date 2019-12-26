@@ -10,7 +10,22 @@
 
     <body>
         <header>
-  
+         <p class="navbar-text pull-right">
+  <% if user_signed_in? %>
+    Logged in as <strong><%= current_user.email %></strong>.
+    <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
+    <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+  <% else %>
+    <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
+    <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+  <% end %>
+  </p>
+  <% if notice %>
+    <p class="alert alert-success"><%= notice %></p>
+  <% end %>
+  <% if alert %>
+    <p class="alert alert-danger"><%= alert %></p>
+  <% end %>
             <img src="https://i.pinimg.com/originals/49/0d/7d/490d7d7e1d43eae87c665c38ca9e80f8.jpg" class="profile-img">
             <nav>
                 <ul>
@@ -33,7 +48,9 @@
             
             <section id="products">
                 <div class="section-inner">
+                <% if current_user.email == "ban@gmail.com"%>
                <%= link_to "Add a Store", new_store_path, { :class => "button waves-effect waves-light btn" } %>
+              <%end%>
 <br><br>
 <table class="striped bordered">
   <tr>
@@ -44,10 +61,11 @@
 
   <% @stores.each do |store| %>
     <tr>
-        <td><%=link_to store.name, store_path(store) %></td>
+    <td><%=link_to store.name, store_path(store) %></td>
         <td><%= store.hometown %></td>
           <td><%= image_tag(store.img, size: "100x100", alt: "Store Image") %></td>
           <% if current_user.email == "ban@gmail.com"%>
+  
         <td><a class="btn-floating btn-large red" href="<%= edit_store_path(store) %>" >
       			<i class="large material-icons">mode_edit</i>
     		</a>
